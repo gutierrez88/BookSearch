@@ -1,0 +1,24 @@
+.google {
+    color: white;
+    background-color: rgb(27, 180, 160);
+    margin-bottom: 10px;
+    width: 150px;
+    height: 30px;
+}
+
+.form {
+    background-color: rgb(145, 224,213);
+    color: white;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+    color: black;
+}
+
+input[type=text]:not(.browser-default) {
+    color: black;
+}
+
+::placeholder {
+    color: grey;
+}
