@@ -4,9 +4,13 @@ import "./style.css";
 
 function Nav() {
     return (
-        <nav className="valign-wrapper">
-            <div calssName="nav-wrapper">
-                <ul className="links">
+        <nav className="row">
+            <div className="nav-wrapper center-align">
+                <Link to="/" className="logo col s6">
+                    <h4>Book Search</h4>
+                </Link>
+                <div className="col s0 m2"></div>
+                <ul className="links col s6 m4">
                     <li>
                         <Link to="/" className={window.location.pathname === "/" ? "link active" : "link"}>
                             Search
