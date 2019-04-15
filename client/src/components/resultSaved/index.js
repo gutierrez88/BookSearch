@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Result(props) {
+function ResultSaved(props) {
   const authors = props.authors ? props.authors.toString().split(",").join(", ") : "Not Listed";
 
   return (
@@ -18,8 +18,8 @@ function Result(props) {
               <p>By {authors}</p>
             </div>
             <div className="card-action">
-              <a href={props.info}>More Information on this Book</a>
-              <button onClick={props.saveBook} type="button" className="saveBtn">Save this Book</button>
+              <a className="infoLink" href={props.info}>More Information on this Book</a>
+              <button className="removeBtn" onClick={props.deleteBook} type="button">Remove from Saved</button>
             </div>
           </div>
         </div>
@@ -28,4 +28,4 @@ function Result(props) {
   );
 }
     
-export default Result;
+export default ResultSaved;

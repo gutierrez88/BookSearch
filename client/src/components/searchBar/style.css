@@ -1,14 +1,21 @@
 .google {
     color: white;
-    background-color: rgb(27, 180, 160);
+    background-color: #4EB6CA;
     margin-bottom: 10px;
     width: 150px;
     height: 30px;
 }
 
+button:focus {
+    background-color: #8FD3E0;
+}
+
 .form {
-    background-color: rgb(145, 224,213);
+    background-color: #8FD3E0;
     color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.52);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.52);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.52);
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly]) {
