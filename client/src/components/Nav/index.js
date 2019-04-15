@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-function Nav() {
+function Nav(props) {
     return (
         <nav className="row">
             <div className="nav-wrapper center-align">
@@ -12,12 +12,12 @@ function Nav() {
                 <div className="col s0 m2"></div>
                 <ul className="links col s6 m4">
                     <li>
-                        <Link to="/" className={window.location.pathname === "/" ? "link active" : "link"}>
+                        <Link to="/" className={props.page === "search" ? "link active" : "link"}>
                             Search
                         </Link>
                     </li>
                     <li>
-                        <Link to="/saved" className={window.location.pathname === "/saved" ? "link active" : "link"}>
+                        <Link to="/saved" className={props.page === "saved" ? "link active" : "link"}>
                             Saved
                         </Link>
                     </li>

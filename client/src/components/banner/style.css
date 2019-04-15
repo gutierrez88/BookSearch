@@ -1,9 +1,10 @@
 .banner {
     height: 300px;
     clear: both;
-    box-shadow: 0px 0px 50px 11px rgba(0,0,0,0.75) inset;
-    -webkit-box-shadow: 0px 0px 50px 11px rgba(0,0,0,0.75) inset;
-    -moz-box-shadow: 0px 0px 50px 11px rgba(0,0,0,0.75) inset;
+    background: #8FD3E0;
+    background: linear-gradient(180deg,#8FD3E0 0%, #ffffff 90%);
+    background: -webkit-linear-gradient(180deg,#8FD3E0 0%, #ffffff 90%);
+    background: -moz-linear-gradient(180deg,#8FD3E0 0%, #ffffff 90%);
   }
   
   .innerBanner {

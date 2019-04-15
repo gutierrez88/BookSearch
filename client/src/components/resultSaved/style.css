@@ -1,0 +1,15 @@
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: rgb(27, 180, 160);
+}
+
+.removeBtn {
+    color: white;
+    background-color: #4EB6CA;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 30px;
+}
+
+button:focus {
+    background-color: #8FD3E0;
+}

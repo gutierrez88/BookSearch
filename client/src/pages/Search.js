@@ -3,6 +3,7 @@ import Banner from "../components/banner"
 import SearchBar from "../components/searchBar"
 import Result from "../components/result"
 import API from "../utils/API";
+import Nav from "../components/Nav";
 
 class Search extends Component {
     state = {
@@ -18,16 +19,19 @@ class Search extends Component {
         API.search(name)
             .then(res => {
                 let book = res.data.items;
-                this.setState({books: book});
-                console.log(this.state.books)
+                this.setState({books: book, search: ""});
             })
-                // this.setState({books: res.data.data}))
+            .catch(err => console.log(err));
+    };
+
+    saveBook = book => {
+        API.saveBook(book)
+            .then(res => console.log("The book was saved", res))
             .catch(err => console.log(err));
     };
 
     handleInputChange = event => {
-        const name = event.target.name;
-        const value = event.target.value;
+        const {name, value} = event.target;
         this.setState({
             [name]: value
         });
@@ -41,6 +45,9 @@ class Search extends Component {
     render() {
         return (
             <div>
+                <Nav 
+                    page={"search"}
+                />
                 <Banner>
                     <h2 className="innerBanner">What book would you like to search for?</h2>
                 </Banner>
@@ -49,7 +56,26 @@ class Search extends Component {
                     handleFormSubmit={this.handleFormSubmit}
                     handleInputChange={this.handleInputChange}
                 />
-                <Result />
+                {this.state.books.map(book => (
+
+                    <Result
+                        key={book.id}
+                        title={book.volumeInfo.title}
+                        authors={book.volumeInfo.authors}
+                        description={book.volumeInfo.description}
+                        picture={book.volumeInfo.imageLinks.thumbnail}
+                        info={book.volumeInfo.infoLink}
+                        saveBook={() => this.saveBook({
+                            title: book.volumeInfo.title,
+                            authors: book.volumeInfo.authors ? book.volumeInfo.authors.toString().split(",").join(", ") : "Not Listed",
+                            description: book.volumeInfo.description,
+                            picture: book.volumeInfo.imageLinks.thumbnail,
+                            info: book.volumeInfo.infoLink
+                        })
+                    }
+                    />
+                ))}
+                
             </div>
         )
     }
