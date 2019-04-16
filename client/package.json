@@ -1,7 +1,7 @@
 {
-  "name": "bookSearch",
+  "name": "Book Search",
   "version": "0.1.0",
-  "description": "Google Books Search",
+  "description": "Search the Google API for books. Allows for saving books for later reference.",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
