@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "Search Books",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "Search the Google API for books. Allows for saving books for later reference.",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
